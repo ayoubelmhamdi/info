@@ -1,0 +1,18 @@
+[book]
+authors = ["Ayoub EL Mhamdi"]
+title = "Ayoub docs"
+language = "en"
+
+[build]
+create-missing = false
+
+[output.html]
+site-url = "/info/"
+no-section-label = false
+default-theme = "navy"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/ayoubelmhamdi/info"
+edit-url-template = "https://github.com/ayoubelmhamdi/info/tree/master/{path}"
+
+[output.katex]
+[preprocessor.katex]
