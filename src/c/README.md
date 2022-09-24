@@ -12,3 +12,10 @@
       break;
   } 
 ```
+
+# compare two strings
+```c
+if (strcmp(s1,s2)==0){
+    //true
+}
+```
