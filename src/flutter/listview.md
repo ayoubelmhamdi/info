@@ -1,3 +1,8 @@
+# List of models
+```dart
+List<Quote> list=[Quote(text: 'll', author: '') ];
+```
+
 # map listview
 main:
 ```dart

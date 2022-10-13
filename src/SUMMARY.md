@@ -7,17 +7,6 @@
 	- [Gui](./matlab/gui.md)
 #
 ---
-- [Latex](./latex/README.md)
-	- [animation](./latex/animation.md)
-	- [convert](./latex/convert.md)
-	- [fix](./latex/fix.md)
-	- [inslatter](./latex/inslatter.md)
-	- [latexindent](./latex/latexindent.md)
-	- [remove cpan](./latex/remove-cpan.md)
-	- [symbol insertion](./latex/symbol-insertion.md)
-	- [tikz](./latex/tikz.md)
-#
----
 - [Bash](./bash/README.md)
 	- [Array](./bash/array.md)
 	- [Array from file](./bash/array-from-file.md)
@@ -26,44 +15,6 @@
 	- [Color](./bash/color.md)
 	- [read file](./bash/file.md)
 	- [Shellspell](./bash/shellspell.md)
-#
----
-- [vim](./vim/README.md)
-	- [buffer](./vim/buffer.md)
-	- [change-nvim-dir](./vim/change-nvim-dir.md)
-	- [fr](./vim/fr.md)
-	- [gruvbox](./vim/gruvbox.md)
-	- [lsp](./vim/lsp.md)
-	- [luarcok-packer](./vim/luarcok-packer.md)
-	- [make](./vim/make.md)
-	- [map](./vim/map.md)
-	- [spell](./vim/spell.md)
-#
----
-- [Rust](./rust/README.md)
-    - [C like](./rust/c-like.md)
-    - [Error](./rust/rust-error.md)
-    - [Struct](./rust/struct.md)
-    - [match](./rust/match.md)
-#
----
-- [JavaScipt](./js/README.md)
-#
----
-- [lua](./lua/README.md)
-	- [string](./lua/string.md)
-#
----
-- [Flutter](./flutter/README.md)
-    - [assets in yaml](./flutter/assets-in-yaml.md)
-    - [Hot reload](./flutter/hot-reload.md)
-    - [Flutter fix](./flutter/flutter-fix.md)
-    - [listview](./flutter/listview.md)
-    - [model](./flutter/model.md)
-    - [route](./flutter/route.md)
-    - [widget](./flutter/widget.md)
-    - [Install in linux](./flutter/install-in-linux.md)
-    - [Format String](./flutter/string-format.md)
 #
 ---
 - [C](./c/README.md)
@@ -81,6 +32,59 @@
 	- [str_to_int](./c/str_to_int.md)
 	- [struct](./c/struct.md)
 	- [time](./c/time.md)
+#
+---
+- [Rust](./rust/README.md)
+    - [C like](./rust/c-like.md)
+    - [Error](./rust/rust-error.md)
+    - [Struct](./rust/struct.md)
+    - [match](./rust/match.md)
+#
+---
+- [Dart](./dart/README.md)
+    - [basic](./dart/basic.md)
+#
+---
+- [Flutter](./flutter/README.md)
+    - [assets in yaml](./flutter/assets-in-yaml.md)
+    - [Hot reload](./flutter/hot-reload.md)
+    - [Flutter fix](./flutter/flutter-fix.md)
+    - [listview](./flutter/listview.md)
+    - [model](./flutter/model.md)
+    - [route](./flutter/route.md)
+    - [widget](./flutter/widget.md)
+    - [Install in linux](./flutter/install-in-linux.md)
+    - [Format String](./flutter/string-format.md)
+#
+---
+- [lua](./lua/README.md)
+	- [string](./lua/string.md)
+#
+---
+- [JavaScipt](./js/README.md)
+#
+---
+- [Latex](./latex/README.md)
+	- [animation](./latex/animation.md)
+	- [convert](./latex/convert.md)
+	- [fix](./latex/fix.md)
+	- [inslatter](./latex/inslatter.md)
+	- [latexindent](./latex/latexindent.md)
+	- [remove cpan](./latex/remove-cpan.md)
+	- [symbol insertion](./latex/symbol-insertion.md)
+	- [tikz](./latex/tikz.md)
+#
+---
+- [vim](./vim/README.md)
+	- [buffer](./vim/buffer.md)
+	- [change-nvim-dir](./vim/change-nvim-dir.md)
+	- [fr](./vim/fr.md)
+	- [gruvbox](./vim/gruvbox.md)
+	- [lsp](./vim/lsp.md)
+	- [luarcok-packer](./vim/luarcok-packer.md)
+	- [make](./vim/make.md)
+	- [map](./vim/map.md)
+	- [spell](./vim/spell.md)
 <!-- hidden ->
 
 
