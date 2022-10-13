@@ -1,6 +1,6 @@
 # successive
 ```latex
-\newcommand{\myitem}{\item[$\blacksquare$]}
+\newcommand{\myitem}{\item[\$\blacksquare\$]}
 
 \begin{frame}{Historique}
     \begin{itemize}[<+-|alert@+>]

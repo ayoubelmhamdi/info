@@ -7,7 +7,7 @@ declare -a arr=(
       "array"
 )
 
-for item in "${arr[@]}";do
+for item in "\${arr[@]}";do
   #...
 done
 ```
@@ -15,8 +15,8 @@ done
 # pass array to function
 ```bash
 f() {
-    declare -a argAry1=("${!1}")
-    echo "${argAry1[@]}"
+    declare -a argAry1=("\${!1}")
+    echo "\${argAry1[@]}"
 }
 
 arr1=(

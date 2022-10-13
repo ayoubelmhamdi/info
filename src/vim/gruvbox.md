@@ -1,7 +1,7 @@
 
 - change color of `dar1`
 ```diff
-$ diff lua/gruvebox/color.lua
+\$ diff lua/gruvebox/color.lua
 
  dark0_soft = hsl("#32302f"),
 -dark1 = hsl("#3c3836"),
@@ -11,7 +11,7 @@ $ diff lua/gruvebox/color.lua
 
 - change curlsorline cursor   
 ```diff
-$ diff lua/gruvebox/base.lua
+\$ diff lua/gruvebox/base.lua
 
  LineNr {fg = bg4, bg = number_column},
 -CursorLineNr {fg = yellow, bg = bg1},

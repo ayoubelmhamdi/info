@@ -7,14 +7,14 @@ YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
 
 function red {
-    printf "${RED}$@${NC}\n"
+    printf "\${RED}\$@\${NC}\n"
 }
 
 function green {
-    printf "${GREEN}$@${NC}\n"
+    printf "\${GREEN}\$@\${NC}\n"
 }
 
 function yellow {
-    printf "${YELLOW}$@${NC}\n"
+    printf "\${YELLOW}\$@\${NC}\n"
 }
 ```

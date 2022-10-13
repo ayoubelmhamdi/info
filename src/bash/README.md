@@ -2,14 +2,14 @@
 
 # random by max number of case
 ```bash
-$ echo ${RANDOM:0:3}
+\$ echo \${RANDOM:0:3}
 ```
 
 # substitution
 - remove dirname
 ```bash
 f="./4-Attya-anatomie/expose.pdf"
-echo ${f##*/}
+echo \${f##*/}
 ```
 ```
 expose.pdf
@@ -18,23 +18,23 @@ expose.pdf
 - extension
 ```bash
 file=ra.pdf
-echo "${file:0:-4}"
+echo "\${file:0:-4}"
 ```
 ```
 ra
 ```
 
 ```bash
-$ f="/etc/resolv.conf"
-$ echo "${f#/etc/}"
+\$ f="/etc/resolv.conf"
+\$ echo "\${f#/etc/}"
 
 resolv.conf
 ```
 
 - not determiner fisrt match
 ```bash
-$ f="/etc/resolv.conf"
-$ echo "${f#*/}"
+\$ f="/etc/resolv.conf"
+\$ echo "\${f#*/}"
 
 resolv.conf
 ```
@@ -43,7 +43,7 @@ resolv.conf
 ```bash
 hello=2020
 var="hello"
-echo ${!var}
+echo \${!var}
 # 2020
 ```
 # format string like a table

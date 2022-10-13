@@ -12,7 +12,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: quotes.map((quote) => Text('${quote.text}- ${quote.author}')).toList(),
+      children: quotes.map((quote) => Text('\${quote.text}- \${quote.author}')).toList(),
     );
 ```
 
@@ -45,7 +45,7 @@ class Mycard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      child: Card(child: Text('${quote.text} -- ${quote.author}')),
+      child: Card(child: Text('\${quote.text} -- \${quote.author}')),
     );
   }
 }

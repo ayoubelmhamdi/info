@@ -1,9 +1,9 @@
 
 - to remove perl/cpan module:
 ```bash
-$cpanm --uninstall YAML::Tiny module
+\$cpanm --uninstall YAML::Tiny module
 ```
 - this module install at:
 ```bash
-$ ls $HOME/perl5/lib/perl5
+\$ ls \$HOME/perl5/lib/perl5
 ```
