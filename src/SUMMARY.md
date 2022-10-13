@@ -1,6 +1,12 @@
 # Summary
 [Introduction](README.md)
 # Table of content
+- [Matlab](./matlab/README.md)
+	- [Basic](./matlab/basic.md)
+	- [Loop](./matlab/loop.md)
+	- [Gui](./matlab/gui.md)
+#
+---
 - [Latex](./latex/README.md)
 	- [animation](./latex/animation.md)
 	- [convert](./latex/convert.md)
