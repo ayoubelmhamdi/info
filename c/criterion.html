@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>criterion - Ayoub docs</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Table of content</li><li class="chapter-item expanded "><a href="../matlab/index.html"><strong aria-hidden="true">1.</strong> Matlab</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../matlab/basic.html"><strong aria-hidden="true">1.1.</strong> Basic</a></li><li class="chapter-item expanded "><a href="../matlab/loop.html"><strong aria-hidden="true">1.2.</strong> Loop</a></li><li class="chapter-item expanded "><a href="../matlab/gui.html"><strong aria-hidden="true">1.3.</strong> Gui</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../bash/index.html"><strong aria-hidden="true">2.</strong> Bash</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../bash/array.html"><strong aria-hidden="true">2.1.</strong> Array</a></li><li class="chapter-item expanded "><a href="../bash/array-from-file.html"><strong aria-hidden="true">2.2.</strong> Array from file</a></li><li class="chapter-item expanded "><a href="../bash/bash-args.html"><strong aria-hidden="true">2.3.</strong> Args</a></li><li class="chapter-item expanded "><a href="../bash/bash-find-binary.html"><strong aria-hidden="true">2.4.</strong> Find binary</a></li><li class="chapter-item expanded "><a href="../bash/color.html"><strong aria-hidden="true">2.5.</strong> Color</a></li><li class="chapter-item expanded "><a href="../bash/file.html"><strong aria-hidden="true">2.6.</strong> read file</a></li><li class="chapter-item expanded "><a href="../bash/shellspell.html"><strong aria-hidden="true">2.7.</strong> Shellspell</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../c/index.html"><strong aria-hidden="true">3.</strong> C</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c/concate_tree_string.html"><strong aria-hidden="true">3.1.</strong> concate tree string</a></li><li class="chapter-item expanded "><a href="../c/criterion.html" class="active"><strong aria-hidden="true">3.2.</strong> criterion</a></li><li class="chapter-item expanded "><a href="../c/file.html"><strong aria-hidden="true">3.3.</strong> file</a></li><li class="chapter-item expanded "><a href="../c/flags.html"><strong aria-hidden="true">3.4.</strong> flags</a></li><li class="chapter-item expanded "><a href="../c/gdb.html"><strong aria-hidden="true">3.5.</strong> gdb</a></li><li class="chapter-item expanded "><a href="../c/make.html"><strong aria-hidden="true">3.6.</strong> make</a></li><li class="chapter-item expanded "><a href="../c/mylib.html"><strong aria-hidden="true">3.7.</strong> mylib</a></li><li class="chapter-item expanded "><a href="../c/pointer.html"><strong aria-hidden="true">3.8.</strong> pointer</a></li><li class="chapter-item expanded "><a href="../c/share_lib.html"><strong aria-hidden="true">3.9.</strong> share lib</a></li><li class="chapter-item expanded "><a href="../c/sleep.html"><strong aria-hidden="true">3.10.</strong> sleep</a></li><li class="chapter-item expanded "><a href="../c/string.html"><strong aria-hidden="true">3.11.</strong> string</a></li><li class="chapter-item expanded "><a href="../c/str_to_int.html"><strong aria-hidden="true">3.12.</strong> str_to_int</a></li><li class="chapter-item expanded "><a href="../c/struct.html"><strong aria-hidden="true">3.13.</strong> struct</a></li><li class="chapter-item expanded "><a href="../c/time.html"><strong aria-hidden="true">3.14.</strong> time</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">4.</strong> Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../rust/c-like.html"><strong aria-hidden="true">4.1.</strong> C like</a></li><li class="chapter-item expanded "><a href="../rust/rust-error.html"><strong aria-hidden="true">4.2.</strong> Error</a></li><li class="chapter-item expanded "><a href="../rust/struct.html"><strong aria-hidden="true">4.3.</strong> Struct</a></li><li class="chapter-item expanded "><a href="../rust/match.html"><strong aria-hidden="true">4.4.</strong> match</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../dart/index.html"><strong aria-hidden="true">5.</strong> Dart</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dart/basic.html"><strong aria-hidden="true">5.1.</strong> basic</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../flutter/index.html"><strong aria-hidden="true">6.</strong> Flutter</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../flutter/assets-in-yaml.html"><strong aria-hidden="true">6.1.</strong> assets in yaml</a></li><li class="chapter-item expanded "><a href="../flutter/hot-reload.html"><strong aria-hidden="true">6.2.</strong> Hot reload</a></li><li class="chapter-item expanded "><a href="../flutter/flutter-fix.html"><strong aria-hidden="true">6.3.</strong> Flutter fix</a></li><li class="chapter-item expanded "><a href="../flutter/listview.html"><strong aria-hidden="true">6.4.</strong> listview</a></li><li class="chapter-item expanded "><a href="../flutter/model.html"><strong aria-hidden="true">6.5.</strong> model</a></li><li class="chapter-item expanded "><a href="../flutter/route.html"><strong aria-hidden="true">6.6.</strong> route</a></li><li class="chapter-item expanded "><a href="../flutter/widget.html"><strong aria-hidden="true">6.7.</strong> widget</a></li><li class="chapter-item expanded "><a href="../flutter/install-in-linux.html"><strong aria-hidden="true">6.8.</strong> Install in linux</a></li><li class="chapter-item expanded "><a href="../flutter/string-format.html"><strong aria-hidden="true">6.9.</strong> Format String</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../lua/index.html"><strong aria-hidden="true">7.</strong> lua</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../lua/string.html"><strong aria-hidden="true">7.1.</strong> string</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../js/index.html"><strong aria-hidden="true">8.</strong> JavaScipt</a></li><li class="chapter-item expanded affix "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../latex/index.html"><strong aria-hidden="true">9.</strong> Latex</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../latex/animation.html"><strong aria-hidden="true">9.1.</strong> animation</a></li><li class="chapter-item expanded "><a href="../latex/convert.html"><strong aria-hidden="true">9.2.</strong> convert</a></li><li class="chapter-item expanded "><a href="../latex/fix.html"><strong aria-hidden="true">9.3.</strong> fix</a></li><li class="chapter-item expanded "><a href="../latex/inslatter.html"><strong aria-hidden="true">9.4.</strong> inslatter</a></li><li class="chapter-item expanded "><a href="../latex/latexindent.html"><strong aria-hidden="true">9.5.</strong> latexindent</a></li><li class="chapter-item expanded "><a href="../latex/remove-cpan.html"><strong aria-hidden="true">9.6.</strong> remove cpan</a></li><li class="chapter-item expanded "><a href="../latex/symbol-insertion.html"><strong aria-hidden="true">9.7.</strong> symbol insertion</a></li><li class="chapter-item expanded "><a href="../latex/tikz.html"><strong aria-hidden="true">9.8.</strong> tikz</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../vim/index.html"><strong aria-hidden="true">10.</strong> vim</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vim/buffer.html"><strong aria-hidden="true">10.1.</strong> buffer</a></li><li class="chapter-item expanded "><a href="../vim/change-nvim-dir.html"><strong aria-hidden="true">10.2.</strong> change-nvim-dir</a></li><li class="chapter-item expanded "><a href="../vim/fr.html"><strong aria-hidden="true">10.3.</strong> fr</a></li><li class="chapter-item expanded "><a href="../vim/gruvbox.html"><strong aria-hidden="true">10.4.</strong> gruvbox</a></li><li class="chapter-item expanded "><a href="../vim/lsp.html"><strong aria-hidden="true">10.5.</strong> lsp</a></li><li class="chapter-item expanded "><a href="../vim/luarcok-packer.html"><strong aria-hidden="true">10.6.</strong> luarcok-packer</a></li><li class="chapter-item expanded "><a href="../vim/make.html"><strong aria-hidden="true">10.7.</strong> make</a></li><li class="chapter-item expanded "><a href="../vim/map.html"><strong aria-hidden="true">10.8.</strong> map</a></li><li class="chapter-item expanded "><a href="../vim/spell.html"><strong aria-hidden="true">10.9.</strong> spell</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Ayoub docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ayoubelmhamdi/info" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/ayoubelmhamdi/info/tree/master/src/c/criterion.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<pre><code class="language-c">#include &lt;criterion/criterion.h&gt;
+// https://github.com/Snaipe/Criterion/blob/bleeding/samples/asserts.c
+</code></pre>
+<h1 id="str1--str2-eq"><a class="header" href="#str1--str2-eq">str1 == str2: eq</a></h1>
+<pre><code class="language-c">// need for str,...
+#include &lt;criterion/new/assert.h&gt;
+
+Test(..., ...) {
+    cr_assert(eq(str, &quot;hello&quot;, &quot;hello&quot;));
+}
+</code></pre>
+<h1 id="function-return-1-or-bool"><a class="header" href="#function-return-1-or-bool">function return 1 or bool</a></h1>
+<pre><code class="language-c">Test(..., ...) {
+    cr_assert(true);
+}
+</code></pre>
+<h1 id="str1--"><a class="header" href="#str1--">str1 == &quot;&quot;:</a></h1>
+<pre><code class="language-c">Test(..., ...) {
+    char s1=&quot;&quot;;
+    cr_assert(zero(str, s1));
+    cr_assert(not (zero(str, s1)));
+}
+</code></pre>
+<h1 id="initfinish"><a class="header" href="#initfinish">init/finish</a></h1>
+<pre><code class="language-c">void setup(void)
+{
+    puts(&quot;Runs before the test&quot;);
+}
+
+void teardown(void)
+{
+    puts(&quot;Runs after the test&quot;);
+}
+
+// must add this args at the end
+Test(..., ..., .init = setup, .fini = teardown){
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../c/concate_tree_string.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../c/file.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../c/concate_tree_string.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../c/file.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

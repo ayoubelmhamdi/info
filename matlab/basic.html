@@ -1,0 +1,991 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Basic - Ayoub docs</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Table of content</li><li class="chapter-item expanded "><a href="../matlab/index.html"><strong aria-hidden="true">1.</strong> Matlab</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../matlab/basic.html" class="active"><strong aria-hidden="true">1.1.</strong> Basic</a></li><li class="chapter-item expanded "><a href="../matlab/loop.html"><strong aria-hidden="true">1.2.</strong> Loop</a></li><li class="chapter-item expanded "><a href="../matlab/gui.html"><strong aria-hidden="true">1.3.</strong> Gui</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../bash/index.html"><strong aria-hidden="true">2.</strong> Bash</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../bash/array.html"><strong aria-hidden="true">2.1.</strong> Array</a></li><li class="chapter-item expanded "><a href="../bash/array-from-file.html"><strong aria-hidden="true">2.2.</strong> Array from file</a></li><li class="chapter-item expanded "><a href="../bash/bash-args.html"><strong aria-hidden="true">2.3.</strong> Args</a></li><li class="chapter-item expanded "><a href="../bash/bash-find-binary.html"><strong aria-hidden="true">2.4.</strong> Find binary</a></li><li class="chapter-item expanded "><a href="../bash/color.html"><strong aria-hidden="true">2.5.</strong> Color</a></li><li class="chapter-item expanded "><a href="../bash/file.html"><strong aria-hidden="true">2.6.</strong> read file</a></li><li class="chapter-item expanded "><a href="../bash/shellspell.html"><strong aria-hidden="true">2.7.</strong> Shellspell</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../c/index.html"><strong aria-hidden="true">3.</strong> C</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c/concate_tree_string.html"><strong aria-hidden="true">3.1.</strong> concate tree string</a></li><li class="chapter-item expanded "><a href="../c/criterion.html"><strong aria-hidden="true">3.2.</strong> criterion</a></li><li class="chapter-item expanded "><a href="../c/file.html"><strong aria-hidden="true">3.3.</strong> file</a></li><li class="chapter-item expanded "><a href="../c/flags.html"><strong aria-hidden="true">3.4.</strong> flags</a></li><li class="chapter-item expanded "><a href="../c/gdb.html"><strong aria-hidden="true">3.5.</strong> gdb</a></li><li class="chapter-item expanded "><a href="../c/make.html"><strong aria-hidden="true">3.6.</strong> make</a></li><li class="chapter-item expanded "><a href="../c/mylib.html"><strong aria-hidden="true">3.7.</strong> mylib</a></li><li class="chapter-item expanded "><a href="../c/pointer.html"><strong aria-hidden="true">3.8.</strong> pointer</a></li><li class="chapter-item expanded "><a href="../c/share_lib.html"><strong aria-hidden="true">3.9.</strong> share lib</a></li><li class="chapter-item expanded "><a href="../c/sleep.html"><strong aria-hidden="true">3.10.</strong> sleep</a></li><li class="chapter-item expanded "><a href="../c/string.html"><strong aria-hidden="true">3.11.</strong> string</a></li><li class="chapter-item expanded "><a href="../c/str_to_int.html"><strong aria-hidden="true">3.12.</strong> str_to_int</a></li><li class="chapter-item expanded "><a href="../c/struct.html"><strong aria-hidden="true">3.13.</strong> struct</a></li><li class="chapter-item expanded "><a href="../c/time.html"><strong aria-hidden="true">3.14.</strong> time</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">4.</strong> Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../rust/c-like.html"><strong aria-hidden="true">4.1.</strong> C like</a></li><li class="chapter-item expanded "><a href="../rust/rust-error.html"><strong aria-hidden="true">4.2.</strong> Error</a></li><li class="chapter-item expanded "><a href="../rust/struct.html"><strong aria-hidden="true">4.3.</strong> Struct</a></li><li class="chapter-item expanded "><a href="../rust/match.html"><strong aria-hidden="true">4.4.</strong> match</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../dart/index.html"><strong aria-hidden="true">5.</strong> Dart</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dart/basic.html"><strong aria-hidden="true">5.1.</strong> basic</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../flutter/index.html"><strong aria-hidden="true">6.</strong> Flutter</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../flutter/assets-in-yaml.html"><strong aria-hidden="true">6.1.</strong> assets in yaml</a></li><li class="chapter-item expanded "><a href="../flutter/hot-reload.html"><strong aria-hidden="true">6.2.</strong> Hot reload</a></li><li class="chapter-item expanded "><a href="../flutter/flutter-fix.html"><strong aria-hidden="true">6.3.</strong> Flutter fix</a></li><li class="chapter-item expanded "><a href="../flutter/listview.html"><strong aria-hidden="true">6.4.</strong> listview</a></li><li class="chapter-item expanded "><a href="../flutter/model.html"><strong aria-hidden="true">6.5.</strong> model</a></li><li class="chapter-item expanded "><a href="../flutter/route.html"><strong aria-hidden="true">6.6.</strong> route</a></li><li class="chapter-item expanded "><a href="../flutter/widget.html"><strong aria-hidden="true">6.7.</strong> widget</a></li><li class="chapter-item expanded "><a href="../flutter/install-in-linux.html"><strong aria-hidden="true">6.8.</strong> Install in linux</a></li><li class="chapter-item expanded "><a href="../flutter/string-format.html"><strong aria-hidden="true">6.9.</strong> Format String</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../lua/index.html"><strong aria-hidden="true">7.</strong> lua</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../lua/string.html"><strong aria-hidden="true">7.1.</strong> string</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../js/index.html"><strong aria-hidden="true">8.</strong> JavaScipt</a></li><li class="chapter-item expanded affix "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../latex/index.html"><strong aria-hidden="true">9.</strong> Latex</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../latex/animation.html"><strong aria-hidden="true">9.1.</strong> animation</a></li><li class="chapter-item expanded "><a href="../latex/convert.html"><strong aria-hidden="true">9.2.</strong> convert</a></li><li class="chapter-item expanded "><a href="../latex/fix.html"><strong aria-hidden="true">9.3.</strong> fix</a></li><li class="chapter-item expanded "><a href="../latex/inslatter.html"><strong aria-hidden="true">9.4.</strong> inslatter</a></li><li class="chapter-item expanded "><a href="../latex/latexindent.html"><strong aria-hidden="true">9.5.</strong> latexindent</a></li><li class="chapter-item expanded "><a href="../latex/remove-cpan.html"><strong aria-hidden="true">9.6.</strong> remove cpan</a></li><li class="chapter-item expanded "><a href="../latex/symbol-insertion.html"><strong aria-hidden="true">9.7.</strong> symbol insertion</a></li><li class="chapter-item expanded "><a href="../latex/tikz.html"><strong aria-hidden="true">9.8.</strong> tikz</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../vim/index.html"><strong aria-hidden="true">10.</strong> vim</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vim/buffer.html"><strong aria-hidden="true">10.1.</strong> buffer</a></li><li class="chapter-item expanded "><a href="../vim/change-nvim-dir.html"><strong aria-hidden="true">10.2.</strong> change-nvim-dir</a></li><li class="chapter-item expanded "><a href="../vim/fr.html"><strong aria-hidden="true">10.3.</strong> fr</a></li><li class="chapter-item expanded "><a href="../vim/gruvbox.html"><strong aria-hidden="true">10.4.</strong> gruvbox</a></li><li class="chapter-item expanded "><a href="../vim/lsp.html"><strong aria-hidden="true">10.5.</strong> lsp</a></li><li class="chapter-item expanded "><a href="../vim/luarcok-packer.html"><strong aria-hidden="true">10.6.</strong> luarcok-packer</a></li><li class="chapter-item expanded "><a href="../vim/make.html"><strong aria-hidden="true">10.7.</strong> make</a></li><li class="chapter-item expanded "><a href="../vim/map.html"><strong aria-hidden="true">10.8.</strong> map</a></li><li class="chapter-item expanded "><a href="../vim/spell.html"><strong aria-hidden="true">10.9.</strong> spell</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Ayoub docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ayoubelmhamdi/info" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/ayoubelmhamdi/info/tree/master/src/matlab/basic.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="basics"><a class="header" href="#basics">Basics</a></h1>
+<hr />
+<pre><code class="language-matlab">clc        % clear command window
+clear      % clear memory
+;          % no result displayed if command is terminated with semikolon
+</code></pre>
+<h3 id="31-comments"><a class="header" href="#31-comments">3.1 Comments</a></h3>
+<pre><code class="language-matlab">% Single Comment
+%{
+    multi
+    line
+    comment!
+%}
+</code></pre>
+<pre><code class="language-matlab">% MATRICES / VECTORS
+ones(3,4)			generate 3x4 matrix filled with ones
+zeros(3,4)			generate 3x4 matrix filled with zeros
+
+m = [1,2 ; 3,4]		
+[1 2]
+[3 4]
+
+m[1,2]	get value of 1st row, 2nd column of matrix m
+m[2,:]			generates a vector with values of 2nd row 
+v = 1:5			generate vector v = [1 2 3 4 5]
+
+numel(x)	counts number of elements in x (works for vectors &amp; matrix)
+
+
+
+COMMENTS						
+%			code on current line will be ignored
+%%			new comment-section
+
+
+
+CONSTANTS						
+pi			Pi
+exp(1)			e^1 (Eulersche Zahl)
+
+
+
+FUNCTIONS (anonymous)					
+name =@(x) x^2;		define function name=x^2 with x as input
+name(2);			computes functionvalue of function name at x=2
+
+name2 =@(a,b) a^2 + b^2;	define function f=a^2+b^2 with a and b as input
+name2(2,3);		computes functionvalue of function name2 at 2
+
+
+
+IMPLIZIT PLOTS!
+ezplot('x.^3 + x.*y + y.^2 - 36',[-10 10 -10 10]);
+
+[x,fval] = fminsearch(@(x)  x(1).^2 + x(2).^2, [2 1])
+
+WRITE TO CONSOLE
+fprintf('message with %s', 'asd');
+disp('message with asd');
+
+ERROR MESSAGE IN RED
+fprintf(2,'my error(warning) message in RED!\n' );
+</code></pre>
+<h3 id="cells"><a class="header" href="#cells"><code>CELLS</code></a></h3>
+<pre><code class="language-matlab">C = cell(3,1);                 % initialize cellarray (3x1)
+C(1) = cellstr('test1');       % convert string to cellarray
+C(3) = cellstr('test2');       % convert string to cellarray
+disp(C);                       % display cellarray (1 empty value)
+disp(C(~cellfun('isempty',C))  % delete empty entries
+
+% convert cell to string
+C = cell({'t1','t2',''});  % generate cell
+str1 = char(C(1));         % convert 1st element of cell-array 
+str2 = char(C(2));         % convert 2nd element of cell-array 
+str3 = char(C(3));         % empty 1-by-0 matrix
+</code></pre>
+<h3 id="22-clearing-data"><a class="header" href="#22-clearing-data">2.2 Clearing Data</a></h3>
+<pre><code class="language-matlab">clc % Clear command window (does not clear variables)
+clf % Clear figures
+
+clear % Clear everything
+clear all % Clear everything
+
+clear &lt;variable&gt; % Clear single variable
+</code></pre>
+<h3 id="23-configure-output"><a class="header" href="#23-configure-output">2.3 Configure Output</a></h3>
+<pre><code class="language-matlab">format compact % Keeps output compact!
+</code></pre>
+<h3 id="24-stop-execution"><a class="header" href="#24-stop-execution">2.4 Stop Execution</a></h3>
+<p>Use <code>CTRL-c</code> to stop executing a particular command!</p>
+<h3 id="25-precision"><a class="header" href="#25-precision">2.5 Precision</a></h3>
+<p>Precision is set to 15 digits by default. But you can configure that!</p>
+<h2 id="3-basic-matlab-syntax-reference"><a class="header" href="#3-basic-matlab-syntax-reference">3. Basic MATLAB Syntax Reference</a></h2>
+<p>Click on New Script to start creating a new script!</p>
+<h3 id="31-comments-1"><a class="header" href="#31-comments-1">3.1 Comments</a></h3>
+<p><a href="#top">go to top</a></p>
+<pre><code class="language-matlab">% Single Comment
+
+%{
+    multi
+    line
+    comment!
+%}
+</code></pre>
+<p>You can also use <code>CTRL-r</code> to comment and <code>CTRL-t</code> to uncomment!</p>
+<h3 id="32-variables"><a class="header" href="#32-variables">3.2 Variables</a></h3>
+<p>Everything is a <code>double</code> by default in MATLAB.</p>
+<pre><code class="language-matlab">a = 5 % a is now 5! Yay!
+</code></pre>
+<p>Data Types:</p>
+<ul>
+<li>int8, int16, int32, int64</li>
+<li>char</li>
+<li>logical (Booleans)</li>
+<li>double</li>
+<li>single (Value without a decimal place)</li>
+<li>uint8</li>
+</ul>
+<h4 id="more-on-variables"><a class="header" href="#more-on-variables"><strong>More On Variables</strong></a></h4>
+<pre><code class="language-matlab">c1 = 'A'
+class(c1) % Prints the class/type of the variable!
+
+s1 = 'A string'
+class(s1) % With single quotes, the class is 'char'
+
+s2 = &quot;A string&quot;
+class(s2) % With double quotes, the class is 'string'
+
+5 &gt; 2 % Logical 1
+b1 = true % Logical 1
+</code></pre>
+<p>To get the maximum number you can store, you can use these! The maximum and minimums differ depending on the number type. The example list I'm writing below is non-exhaustive.</p>
+<pre><code class="language-matlab">% For ints
+intmax('int8')
+intmin('int8')
+
+% For doubles
+realmax
+
+% For singles
+realmax('single')
+</code></pre>
+<h3 id="33-basic-operations"><a class="header" href="#33-basic-operations">3.3 Basic Operations</a></h3>
+<p>I really shouldn't need to explain this... You can use MATLAB like a calculator, and the results can go into variables!</p>
+<pre><code class="language-matlab">a = 1 + 2 + 3 + 4 + 5
+
+5 + 5 % Add
+5 - 5 % Subtract
+5 * 5 % Multiply
+5 / 5 % Divide
+5 ^ 4 % Exponent
+mod(5, 4) % Mod (get remainder)
+
+% NOTE! MATLAB doesn't have increment and decrement operators. So you can't do stuff like a++, b--, etc.
+</code></pre>
+<h3 id="34-casting"><a class="header" href="#34-casting">3.4 Casting</a></h3>
+<pre><code class="language-matlab">v2 = 8
+v3 = int8(v2) % Like so!
+</code></pre>
+<p>Just write the appropriate class identifier and use it like a function!</p>
+<h3 id="35-printing-and-displaying"><a class="header" href="#35-printing-and-displaying">3.5 Printing and Displaying</a></h3>
+<pre><code class="language-matlab">% Use this to display vectors and numbers!
+disp(some_vector_variable)
+
+% Use this to print strings!
+fprintf(&quot;Hello world!&quot;)
+
+% sprintf prints as a string
+sprintf('5 + 4 = %d\n', 5 + 4)
+% With the %d here, it transplants the next variable argument into the string!
+</code></pre>
+<h3 id="36-user-input"><a class="header" href="#36-user-input">3.6 User Input</a></h3>
+<p>Using the <code>;</code> suppresses the input printout after the user has entered the input!</p>
+<blockquote>
+<p>Note: <code>&quot;</code> might not work in some versions of MATLAB as a string delineator. Use <code>'</code> in that case.</p>
+</blockquote>
+<p><strong>String Input</strong></p>
+<pre><code class="language-matlab">% String Input
+% Notice the '' escapes the second quote
+name = input('What''s your name : ', 's');
+
+% Let's use this if statement to print the input out! (~ means not)
+if ~isempty(name)
+    fprinf('Hello %s\n', name)
+end
+</code></pre>
+<p><strong>Vector Input</strong></p>
+<pre><code class="language-matlab">vInput = input('Enter a vector : ');
+disp(vInput)
+</code></pre>
+<h3 id="37-useful-math-functions"><a class="header" href="#37-useful-math-functions">3.7 Useful Math Functions</a></h3>
+<p><code>help elfun</code> for a whole list of math functions</p>
+<pre><code class="language-matlab">randi([10, 20]) % Random int
+abs(-1) % Returns 1
+floor(2.45) % Returns 2
+ceil(2.45) % Returns 3
+round(2.45) % Returns 2
+exp(1) % e^x
+log(100) % Log base e (ln)
+log10(100) % Log base 10
+log2(100) % Log base 2
+sqrt(100) % Square root
+deg2rad(90)
+rad2deg(3.14)
+</code></pre>
+<h3 id="38-conditionals"><a class="header" href="#38-conditionals">3.8 Conditionals</a></h3>
+<pre><code class="language-matlab">&gt; % More than
+&lt; % Less than
+&gt;= % More than or equal to
+&lt;= % Less than or equal to
+== % Equal to
+~= % Not equal to
+
+|| % Or
+&amp;&amp; % And
+~ % Not
+</code></pre>
+<p><strong>If block</strong></p>
+<pre><code class="language-matlab">if &lt;condition&gt;
+    &lt;do something&gt;
+elseif &lt;condition&gt;
+    &lt;do something else&gt;
+else
+    &lt;do something entirely different&gt;
+end % REMEMBER TO END!!!
+</code></pre>
+<p><strong>Switch Statement</strong></p>
+<pre><code class="language-matlab">switch score
+    case 1
+        disp(&quot;Aw&quot;)
+    case 2
+        disp(&quot;Better&quot;)
+    case 3
+        disp(&quot;You get the point&quot;)
+    otherwise
+        disp(&quot;WHO NAMED IT OTHERWISE OMG&quot;)
+end % REMEMBER TO END
+</code></pre>
+<h3 id="39-vectors"><a class="header" href="#39-vectors">3.9 Vectors</a></h3>
+<p>They're one dimensional rows or columns!</p>
+<p><strong>THE INDEXING FOR MATLAB STARTS AT 1, NOT 0!!!!</strong></p>
+<pre><code class="language-matlab">% Row Vectors
+vector_1 = [5 3 2 1] % Yep!
+vector_2 [5, 3, 2, 1] % Both are valid ways!
+
+% Column Vectors
+vector_3 = [5; 3; 2; 1]
+
+% Index into the vectors
+vector_1(1) % 5
+vector_1(end) % 1 (Last value)
+vector([1 2 3]) % Get first, second, and third value in vector
+
+% Get range
+vector_1(1:3) % First to third
+
+% Change at index
+vector_1(1) = 6
+
+% Transpose Vector
+a = [1 2 3]
+a' % This is now 1, 2, 3 as a column!
+</code></pre>
+<p><strong>Vector Operations</strong></p>
+<pre><code class="language-matlab">a = [2; 3; 4]
+b = [1 2 3]
+
+a * b
+% 2 4 6
+% 3 6 9
+% 4 8 2
+</code></pre>
+<h3 id="310-vector-methods"><a class="header" href="#310-vector-methods">3.10 Vector Methods</a></h3>
+<pre><code class="language-matlab">vector_1 = [1 2 3 4 5]
+length(vector_1)
+sort(vector_1, 'descend')
+
+% Create ranges
+5 : 10 % Gives you [5 6 7 8 9 10]
+2 : 2 : 10 % Gives you [2 4 6 8 10]
+
+% Concatenate
+a = [1 2 3]
+b = [4 5 6]
+[a b] % [1 2 3 4 5 6]
+
+% Dot Product (Either...)
+a * b' % Transpose as needed
+dot(a, b) % Self explanatory
+
+% Cross Product
+cross(a, b) % Nice
+
+% Linspace
+linspace(1, 20, 4) % Generates 4 numbers equally spaced between 1 and 20
+
+% Logspace
+logspace(1, 3, 3) % Like linspace, but the spacing is logarithmic
+</code></pre>
+<h3 id="311-matrices"><a class="header" href="#311-matrices">3.11 Matrices</a></h3>
+<p>It's MATLAB, not Vector lab.</p>
+<pre><code class="language-matlab">matrix_a = [2 3 4; 4 6 8] % 2 rows, 3 columns (2x3)
+
+length(matrix_a) % Gets you 3 (columns)
+numel(matrix_a) % Number of values in matrix (6)
+size(matrix_a) % Rows, then Columns (2 3)
+
+% Generate random matrices!
+randi([10, 20], 2)
+
+% Index into matrices
+a = [1 2 3; 4 5 6; 7 8 9]
+
+a(1, 2) = 22 % Index into single value
+a(1, :) = 25 % Change all row values
+a(:, 2) % Change all column values
+a(end, 1) % Last row
+a(1, end) % Last column
+
+% To delete a value, just literally put a semicolon at the end.
+a(1, 2) = ;
+
+% Multiply matrices
+a * b
+
+% Element-wise multiplication
+a .* b % Take note of the period!
+
+% Other matrix stuffffff
+a - b
+a + b
+</code></pre>
+<h3 id="312-matrix-methods"><a class="header" href="#312-matrix-methods">3.12 Matrix Methods</a></h3>
+<p>The list is not exhaustive!</p>
+<h4 id="construction"><a class="header" href="#construction"><strong>Construction</strong></a></h4>
+<p>Use the <code>help</code> command to find out how these work! They're overloaded functions.</p>
+<pre><code class="language-matlab">eye()
+ones()
+zeros()
+diag()
+</code></pre>
+<h4 id="mathematical-operations"><a class="header" href="#mathematical-operations"><strong>Mathematical Operations</strong></a></h4>
+<pre><code class="language-matlab">sqrt(a) % Square root all values in matrix
+sum(a) % Sum all columns
+sum(a, 'all') % Sum all entries
+
+prod(a) % Multiply all column values
+
+cumsum(a, 'reverse') % Cumulative sum. First row stays the same, each row after is the sum of the preceding and current row (reverse makes it go in reverse)
+cumsum(a) % Or if you don't want it reversed..
+cumprod(a) % Cumulative product.
+
+det() % Determinant
+inv() % Inverse
+</code></pre>
+<h4 id="conditionals-and-indexing"><a class="header" href="#conditionals-and-indexing"><strong>Conditionals and Indexing</strong></a></h4>
+<pre><code class="language-matlab">isequal(a, b) % Check for equality
+a &gt; 3 % Apply conditional to all entries
+find(a &gt; 24) % Gives you index of entries that fulfill the condition
+</code></pre>
+<h4 id="transformations"><a class="header" href="#transformations"><strong>Transformations</strong></a></h4>
+<pre><code class="language-matlab">fliplr(a) % Flip left to right
+flipud(a) % Flip up down
+
+rot90(a) % Rotate 90 degrees
+rot90(a, 2) % Rotate 180 degrees
+
+reshape(a, 2, 6) % Reshape into 2x6, it's like numpy!
+repmat(a, 2, 1) % Duplicate matrix into new matrix. Eg. If original matrix was 3x3, doing repmat(a, 2, 1) makes it 6x3
+
+repelem(m3, 2, 1) % Duplicates ELEMENTS, so in this case, each element is duplicated twice in terms of the row
+</code></pre>
+<h3 id="313-for-loops"><a class="header" href="#313-for-loops">3.13 For Loops</a></h3>
+<p>For loops! It's pretty Pythonic. It iterates through a range.</p>
+<pre><code class="language-matlab">% Loop from 1 to 10 and print it
+for i = 1:10
+    disp(i)
+end % REMEMBER TO END
+
+% MORE EXAMPLES
+
+% Print every value in matrix
+a = [1 2 3; 4 5 6]
+for i = 1:2
+    for j = 1:3
+        disp(a(i, j))
+    end
+end
+
+% Print for undetermined length
+b = [6 7 8]
+for i = 1:length(b)
+    disp(b(i))
+end
+</code></pre>
+<h3 id="314-while-loops"><a class="header" href="#314-while-loops">3.14 While Loops</a></h3>
+<pre><code class="language-matlab">i = 1 % You must create the variable first!
+
+while i &lt; 20
+    if(mod(i, 2)) == 0
+        disp(i)
+        i = i + 1; % Semicolon suppresses the print
+        continue
+    end % This end is for i
+
+    i = i + 1;
+    if i &gt;= 10
+        break
+    end
+end
+</code></pre>
+<h3 id="315-cell-arrays"><a class="header" href="#315-cell-arrays">3.15 Cell Arrays</a></h3>
+<p>You can store data of multiple types</p>
+<pre><code class="language-matlab">cell_A = {'Hi', 35, [25 8 19]}
+cell_B = cell(5) % Create the cell spaces first
+
+cell_A{1} % Get first element
+cell_A{3}(2) % Index further
+cell_A{4} = 'Something else'
+cell_A(4) = ; % Delete
+
+for i = 1:length(cell_A)
+    disp(cell_A{i})
+end
+
+% You can cast character arrays into cell arrays too!
+a = ['A', 'BB', 'CCC']
+char_array = cellstr(a)
+</code></pre>
+<h3 id="316-strings"><a class="header" href="#316-strings">3.16 Strings</a></h3>
+<p>Strings are vectors of characters!</p>
+<pre><code class="language-matlab">str_1 = 'I am a string'
+length(str_1)
+
+% Index into a string
+str_1(1)
+str_1(3:4) % Slices
+
+% Concatenation
+str = strcat(str1, ' and now I''m longer!')
+
+% Look for substring
+strfind(str, 'a') % Returns indexes of all found substrings
+
+% Replace string
+strrep(str, 'longer', 'bigger')
+
+% Split string
+str_array = strsplit(str, ' ') % Splits at all spaces. Makes a string array
+
+% Convert numbers to string
+int2str(99)
+num2str(3.14)
+
+% Check for equality
+strcmp(str1, str2)
+
+% Check if is char
+ischar('Rawr!11!!1')
+
+% Check if a string is just made of letters
+isletter('num 2') % Logical 0
+isstrprop('word2', 'alpha')
+
+% Check if string is made of alphanumeric characters
+isstrprop('word2', 'alphanum') % Logical 1
+
+% Sort
+sort(str, 'descend')
+
+% Delete whitespace (it's like .strip() in python)
+strtrim(str)
+
+% Lower and Uppercase conversion
+lower(str)
+upper(str)
+</code></pre>
+<h3 id="317-structures"><a class="header" href="#317-structures">3.17 Structures</a></h3>
+<p>Custom data types! Think C++ structs! Or Python dictionaries/maps.</p>
+<pre><code class="language-matlab">methyl_struct = struct('name', 'methylDragon', ... % the ... lets you skip down to the next line (:
+'species', ' Dragon')
+
+disp(methyl_struct.name) % methylDragon
+
+% Add a new field!
+methyl_struct.sound = 'Rawr'
+
+% Delete a field
+methyl_struct = rmfield(methyl_struct, 'sound')
+
+% Check if field exists
+isfield(methyl_struct, 'species')
+
+% Get all field names
+fieldnames(methyl_struct)
+
+% Store structures in vectors!
+a(1) = methyl_struct
+</code></pre>
+<h3 id="318-tables"><a class="header" href="#318-tables">3.18 Tables</a></h3>
+<p>Tables are labelled rows of data in a table format</p>
+<p>Get <code>help table</code> if you need help.</p>
+<pre><code class="language-matlab">a = {'A'; 'B'; 'C'; 'D'};
+b = [29; 42; 1; 2]
+c = {'AA', 'BB', 'CC', 'DD'}
+
+% Create a table!!! We'll specify a as the index now
+test_table = table(a, b, c, 'RowName', a)
+
+% You can do cool stuff with tables!
+mean(test_table.b) % For example.. find the means
+
+% Add new fields
+test_table.d = [1; 2; 3]
+
+% Pull specific entries
+test_table({'A', 'B'}, :) % This defaults to using the RowName as indexer
+
+% Pull specific entries, using another row
+a(ismember(test_table.b, {29, 42},:)
+</code></pre>
+<h3 id="319-file-io"><a class="header" href="#319-file-io">3.19 File IO</a></h3>
+<pre><code class="language-matlab">% Let's just make a random matrix first
+rand_matrix = randi([10, 50], 8)
+
+% Let's save and load some files!
+save sampdata.dat rand_matrix -ascii
+load sampdata.dat
+disp sampdata
+type sampdata.dat
+
+% We can save variables in a file as well!
+save params % Leaving no arguments saves all variables you have on hand
+load params
+who % Display it on the screen
+a = 123
+save -append params a % This appends to the normal variable
+</code></pre>
+<h3 id="320-eval"><a class="header" href="#320-eval">3.20 Eval</a></h3>
+<p>If you know Python you should know what this does already.</p>
+<p>Eval executes strings as code!</p>
+<pre><code class="language-matlab">toExecute = spritnf('total = %d + %d', 5, 4)
+eval(toExecute) % Executes it as:
+% total = 5 + 4
+</code></pre>
+<h3 id="321-pausing"><a class="header" href="#321-pausing">3.21 Pausing</a></h3>
+<p>You can pause in MATLAB too! Think of it like Arduino <code>delay()</code> or Python <code>time.sleep()</code></p>
+<pre><code class="language-matlab">pause(5) % Pause for 5 seconds
+
+pause off % Disable pause
+pause on % Enable pause
+</code></pre>
+<h2 id="4-functional-and-oop-matlab"><a class="header" href="#4-functional-and-oop-matlab">4. Functional and OOP MATLAB</a></h2>
+<h3 id="41-functions"><a class="header" href="#41-functions">4.1 Functions</a></h3>
+<p>Functions have to come at the <strong>end</strong> of your file!</p>
+<p>Local and global variable rules still apply! Local variables defined in functions don't change outside of the function! Just take note!</p>
+<pre><code class="language-matlab">% Function to calculate volume
+% The return is defined by the name preceding the =
+% The name of the function is the name following the =
+
+% In this case, the return is 'vol' and the function name is 'cylinderVol'
+function vol = cylinderVol(radius, height)
+    vol = pi radius^2 * height
+end
+
+% Let's try another one! This time a function with no arguments
+function randNum = getRandomNum
+    randNum = randi([1, 100])
+end
+
+% Return more than one value
+[coneV, cylVol] = getVols(10, 20) % I'll call the function here, and define it below
+
+function [coneVol, cylinVol] = getVols(radius, height)
+    cylinVol = pi * radius^2 * height
+    coneVol = 1/3 * cylinVol
+end
+
+% Variable Number of Arguments
+function sum = getSum(varargin)
+    sum = 0;
+    for k = 1:length(varargin)
+        sum = sum + varargin{k}(1);
+    end
+end
+
+% Return variable number of outputs
+function [varargout] = getNumbers(howMany)
+    for k = 1:howMany
+        varargout{1}(k) = k;
+    end
+end
+</code></pre>
+<h3 id="42-anonymous-functions"><a class="header" href="#42-anonymous-functions">4.2 Anonymous Functions</a></h3>
+<p>No named functions! Think lambda in python</p>
+<pre><code class="language-matlab">cubeVol = @ (l, w, h) l * w * h; % (input) output
+
+a = cubeVol(2, 2, 2) % Gives you 8! Correct!
+</code></pre>
+<p><strong>Pass Function to another Function</strong></p>
+<p>Think decorators!</p>
+<p>Source: https://www.youtube.com/watch?v=NSSTkkKRabI</p>
+<pre><code class="language-matlab">mult3 = @ (x) x * 3;
+sol = doMath(mult3, 4)
+
+function sol = doMath(func, num)
+    sol = func(num);
+end
+</code></pre>
+<p><strong>Returning Functions</strong></p>
+<p>Source: https://www.youtube.com/watch?v=NSSTkkKRabI</p>
+<pre><code class="language-matlab">mult4 = doMath2(4);
+sol2 = mult4(5)
+
+function func = doMath2(num)
+    func = @(x) x * num;
+end
+</code></pre>
+<h3 id="43-recursive-functions"><a class="header" href="#43-recursive-functions">4.3 Recursive Functions</a></h3>
+<p>They call themselves!</p>
+<pre><code class="language-matlab">function val = factorial(num)
+if num == 1
+    val = 1;
+else
+    val = num * factorial(num - 1);
+end
+end
+</code></pre>
+<h3 id="44-classes"><a class="header" href="#44-classes">4.4 Classes</a></h3>
+<p>Static members are shared amongst all members of a class</p>
+<pre><code class="language-matlab">classdef Shape
+    properties % Variables!!!
+        height
+        width
+    end
+
+    methods(Static)
+        function out = setGetNumShapes(data)
+            % Persistent values are shared by all objects also
+            persistent Var;
+            if isempty(Var)
+                Var = 0;
+            end
+            if nargin % Number of input arguments
+                Var = Var + data
+            end
+            out = Var;
+        end
+    end
+
+    methods
+        % Define a constructor
+        function obj = Shape(height, width)
+            obj.height = height
+            obj.width = width
+            obj.setGetNumShapes(1)
+        end
+        % Overloaded disp function
+        % If you don't know what overloading is, check my C++ tutorial. It basically overwrites the functionality of a pre-existing function if the argument number matches
+        function disp(obj)
+            fprintf('Height : %.2f / Width : %.2f\n', obj.height, obj.width)
+        end
+        function area = getArea(obj)
+            area = obj.height * obj.width;
+        end
+        % Overload Greater Than function
+        function tf = gt(obja, objb)
+            tf = obja.getArea &gt; objb.getArea
+        end
+    end
+end
+</code></pre>
+<p><strong>Let's try using it!</strong></p>
+<pre><code class="language-matlab">a1 = Shape(10, 20)
+disp(a1)
+Shape.setGetNumShapes
+a1.getArea
+
+a2 = Shape(5, 10)
+disp(a2)
+Shape.setGetNumShapes
+
+a1 &gt; a2
+</code></pre>
+<h3 id="45-class-inheritance"><a class="header" href="#45-class-inheritance">4.5 Class Inheritance</a></h3>
+<pre><code class="language-matlab">classdef Trapezoid &lt; Shape % Trapezoid inherits from Shape
+
+    properties
+        width2
+    end
+
+    methods
+        function obj = Trapezoid(height, width, width2)
+            obj@Shape(height,width) % The @ sign means you're taking it from the parent
+            % In this case we're using Shape's constructor!
+            obj.width2 = width2
+        end
+        function disp(obj)
+            fprint('Height : %.2f / Width : %.2f / Width2 : %.2f', obj.height, obj.width, obj.width2);
+        end
+        function area = getArea(obj)
+            area = (obj.height/2) * (obj.width + obj.width2);
+        end
+    end
+end
+</code></pre>
+<p><strong>Let's try it out!</strong></p>
+<pre><code class="language-matlab">a3 = Trapezoid(10, 4, 6)
+disp(a3)
+a3.getArea
+</code></pre>
+<h2 id="5-plotting"><a class="header" href="#5-plotting">5. Plotting</a></h2>
+<h3 id="51-plotting-in-matlab"><a class="header" href="#51-plotting-in-matlab">5.1 Plotting in MATLAB</a></h3>
+<p>Source: https://www.youtube.com/watch?v=NSSTkkKRabI</p>
+<p><code>help plot</code> for help!</p>
+<pre><code class="language-matlab">xVals = 1:5
+yVals = [2 4 8 5 9]
+yVals2 = [1 5 7 6 8]
+
+figure(1)
+plot(xVals, yVals, 'g+', 'LineWidth', 2)
+hold on % Draw over what was plotted, keep plot settings
+plot(xVals, yVals2, 'k*')
+legend('yVals', 'yVals2')
+
+grid on % Turn grid on
+
+xlabel('Days')
+ylabel('Money')
+title('Money Made Today')
+figure(2)
+bar(xVals, yVals, 'r')
+
+% Colors : blue(b), black(k), cyan(c), green(g),
+% magenta(m), red(r), yellow(y), white(y)
+% Plot Symbols : . o x + * s d v ^ &lt; &gt; p h
+% Line Types : -, :, -., - -
+
+% Set font weights and the like
+% gca is the axis object, gcf is the figure object
+set(gca, 'FontWeight', 'bold', 'FontSize', 20, 'color', 'white');
+set(gcf, 'color', 'white')
+
+clf % Delete all figures
+</code></pre>
+<h4 id="example-sinusoid-with-time"><a class="header" href="#example-sinusoid-with-time"><strong>Example Sinusoid with Time</strong></a></h4>
+<pre><code class="language-matlab">y = A.*cos(2*pi .* t/T - 2*pi .* x/lambda + phi0);
+</code></pre>
+<h3 id="52-3d-plotting-in-matlab"><a class="header" href="#52-3d-plotting-in-matlab">5.2 3D Plotting in MATLAB</a></h3>
+<h4 id="3d-plots-and-meshgrids"><a class="header" href="#3d-plots-and-meshgrids"><strong>3D Plots and Meshgrids</strong></a></h4>
+<p><img src="assets/1553825732887.png" alt="1553825732887" /></p>
+<pre><code class="language-matlab">plot3() % Use this instead of plot2!
+
+% Example
+t = 0: pi/50 : 10*pi;
+plot3(sin(t), cos(t), t)
+
+% Meshgrids
+meshgrid()
+</code></pre>
+<h4 id="surfaces"><a class="header" href="#surfaces"><strong>Surfaces</strong></a></h4>
+<pre><code class="language-matlab">% Plot surfaces
+cylinder()
+sphere()
+
+surf() % Plot a surface
+isosurface() % For when plotting normal surfaces are too hard
+contour() % Plot a contour map instead
+</code></pre>
+<h4 id="vector-fields"><a class="header" href="#vector-fields"><strong>Vector Fields</strong></a></h4>
+<pre><code class="language-matlab">quiver() % 2D
+quiver3() % 3D
+
+colorbar % Add a colorbar!
+</code></pre>
+<h2 id="6-intermediate-and-advanced-math"><a class="header" href="#6-intermediate-and-advanced-math">6. Intermediate and Advanced Math</a></h2>
+<h3 id="61-vector-calculus"><a class="header" href="#61-vector-calculus">6.1 Vector Calculus</a></h3>
+<pre><code class="language-matlab">gradient()
+divergence()
+curl()
+del2() % Discrete laplacian
+</code></pre>
+<pre><code>                            .     .
+                         .  |\-^-/|  .    
+                        /| } O.=.O { |\
+</code></pre>
+<p>​</p>
+<hr />
+<p><a href="https://www.buymeacoffee.com/methylDragon"><img src="./assets/COFFEE%20BUTTON%20%E3%83%BE(%C2%B0%E2%88%87%C2%B0%5E).png" alt="Yeah! Buy the DRAGON a COFFEE!" /></a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../matlab/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../matlab/loop.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../matlab/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../matlab/loop.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
