@@ -24,3 +24,9 @@ this version not continent `tlpkg/installer/tlconfig.guess`
 sudo chown ${USER}:users /
 ln -sf /usr/share/texmf-dist/tlpkg /tlpkg
 ```
+
+### choose old repo for old latex-2021
+```bash
+tlmgr option repository https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2021/tlnet-final
+tlmgr update
+```
