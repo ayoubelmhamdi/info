@@ -1,7 +1,7 @@
 # Install latex on voidlinux
 -----------------------------
 
-should use `^texlive-20210325_4' is you want to use binary
+should use `^texlive-20210325_4` is you want to use binary
 ```bash
 xbps-install -Sy texlive-20210325_4
 ```
