@@ -2,7 +2,7 @@
 
 # random by max number of case
 ```bash
-\$ echo \${RANDOM:0:3}
+echo \${RANDOM:0:3}
 ```
 
 # substitution
@@ -13,6 +13,14 @@ echo \${f##*/}
 ```
 ```
 expose.pdf
+```
+- remove file from dirname
+```bash
+f=/dir1/dir2/file.txt
+dirname \$f
+```
+```
+/dir1/dir2
 ```
 
 - extension
@@ -25,16 +33,16 @@ ra
 ```
 
 ```bash
-\$ f="/etc/resolv.conf"
-\$ echo "\${f#/etc/}"
+f="/etc/resolv.conf"
+echo "\${f#/etc/}"
 
 resolv.conf
 ```
 
 - not determiner fisrt match
 ```bash
-\$ f="/etc/resolv.conf"
-\$ echo "\${f#*/}"
+f="/etc/resolv.conf"
+echo "\${f#*/}"
 
 resolv.conf
 ```
