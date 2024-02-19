@@ -1,9 +1,9 @@
 # Install latex on voidlinux
 -----------------------------
 
-should use `^texlive-20210325_4` is you want to use binary
+should use `texlive-20210325_4` is you want to use binary
 ```bash
-xbps-install -Sy texlive-20210325_4
+xbps-install -Sy texlive # 20210325_4
 ```
 
 ### Bash Var
@@ -28,5 +28,6 @@ ln -sf /usr/share/texmf-dist/tlpkg /tlpkg
 ### choose old repo for old latex-2021
 ```bash
 tlmgr option repository https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2021/tlnet-final
+tlmgr init-usertree
 tlmgr update
 ```
