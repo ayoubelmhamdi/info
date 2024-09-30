@@ -14,5 +14,21 @@ preferred-dark-theme = "navy"
 git-repository-url = "https://github.com/ayoubelmhamdi/info"
 edit-url-template = "https://github.com/ayoubelmhamdi/info/tree/master/{path}"
 
-[output.katex]
 [preprocessor.katex]
+after = ["links"]
+# KaTeX options.
+output = "html"
+leqno = false
+fleqn = false
+throw-on-error = true
+error-color = "#cc0000"
+min-rule-thickness = -1.0
+max-size = "Infinity"
+max-expand = 1000
+trust = false
+# Extra options.
+no-css = false
+include-src = false
+block-delimiter = { left = "$$", right = "$$" }
+inline-delimiter = { left = "$", right = "$" }
+pre-render = true

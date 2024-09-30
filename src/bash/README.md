@@ -23,7 +23,7 @@ dirname \$f
 /dir1/dir2
 ```
 
-- extension
+- remove extension
 ```bash
 file=ra.pdf
 echo "\${file:0:-4}"

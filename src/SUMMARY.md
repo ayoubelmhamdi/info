@@ -25,6 +25,8 @@
 	- [gdb](./c/gdb.md)
 	- [make](./c/make.md)
 	- [mylib](./c/mylib.md)
+	- [ctags](./c/ctags.md)
+	- [compile_commands.json](./c/compile_commands.json.md)
 	- [pointer](./c/pointer.md)
 	- [share lib](./c/share_lib.md)
 	- [sleep](./c/sleep.md)
