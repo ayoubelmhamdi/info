@@ -1,108 +1,70 @@
-# fix tlmgr usermode+ pacage is 2020 but install 2021
-
-# find a userpackage
-```bash
-\$ tlmgr search --global --file beamerthemeShadow
-```
-
-# create manually pkg in /texmf-dist/tex/latex
-```bash
-\$ mkdir /texmf-dist/tex/latex/pkg1
-\$ texhash /texmf-dist
-```
-
-# update 4:
-    - tlmgr repo is old: i can go back to the old reposotory by change the`tlmgr reposotory`
-    ```bash
-    \$ tlmgr option repository https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2021/tlnet-fina
-    ```
-
-# update 3:
-  - latex as bin
-    ```
-    \$ xbps-install -Sy i texlive-20210325_2
-    ```
-  - latex mk
-    - already include
-  - tlmgr already include
-    ```
-    \$ ln -s \$HOME/scripts/latex/tlmgr /sbin
-    ```
-
-  - TeXLive/TLPDB.pm
-    - already include dans `texlive-core-2021.58710_1`
-    ```
-    \$ wget https://raw.githubusercontent.com/TeX-Live/installer/master/tlpkg/TeXLive/TLUtils.pm^C
-
-    ```
-  - latexpkg: auto install missing pkg
-    ```
-    \$ ln -s \$HOME/scripts/latex/latexpkg /sbin
-    ```
-  - verification de reposotory: not sure
-    ```
-    \$ # tlmgr init-usertree
-    ```
-  - define tlpkg
-  ```
-  \$ ln -s /usr/share/texmf-dist/tlpkg /
-  ```
-  - luatex & bibtex
-  ```
-  \$ xbps-install -Sy texlive-LuaTeX texlive-BibTeX
-  ```
-
-# UPDATE 2:
-  - init tlmgr
-  ```
-  \$ tlmgr init-usertree
-  ```
-  - active usermode for root in voidlinux
-    - by alias:
-    ```
-    \$ alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
-    ```
-    - or sumlink
-    ```
-    \$ cat /sbin/tmlgr
-  
-  
-    #!/bin/sh
-    exec /usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode "\$@"
-    ```
-  - geus
-
-# UPDATE:
-  ## xbps binary
-  ```bash
-  \$ xbps-install -Sy texlive-20210325_2
-  ```
-  ## localte module
-  if tmlgr can't locate TeXlive::.... 
-    - link path that reaserch by tlmgr 
-      ln -s /usr/share/texmf-dist /texmf-dist
-    - download module manuly to /texmf-dist/scripts/texlive/TeXLive/...
-    - use alias tl='\$(which tlmgr) --usermode'
 
 
-# OLD:
+## TeX Live 2025 on Void Linux
+
+### 1. Install via xbps
+we need to install the latest that include bins and latex pkg manager called `tlmgr`:
+`texlive-20250308_2` depend on `texlive-core`, so we do not need to install `texlive2025-bin-2025_2`
+
+
+Verify key paths are present:
 
 ```bash
-\$ xbps-install -Sy texlive2021-bin-2021_1
+$ xlocate tlmgr | grep 'scripts/texlive/tlmgr.pl'
+texlive-core-20250308_2    /usr/share/texmf-dist/scripts/texlive/tlmgr.pl
+texlive2025-bin-2025_2     /opt/texlive2025-installer/texmf-dist/scripts/texlive/tlmgr.pl
+$ xlocate pdftex | grep bin
+texlive-20250308_2         /usr/bin/amstex -> /usr/bin/pdftex
 ```
 
-## fix version 2021
- ```
-\$ vim `which tlmgr` or 
-\$ vim TEXMFDIST/scripts/texlive/tlmgr.pl
+### 2. Fix Perl module version mismatch
+avoid using an old latex perl modules:
 
- and replace \$Master = "\$Master/../.."; with \$Master = "\${Master}/../../..";
- ```
-  - download la `latexmk` and make symbloic link
+**Root cause:** `tlmgr.pl` from xbps may newer than the TeXLive Perl modules in `~/tlpkg/TeXLive/`, causing errors like: `Global symbol "$TeXLiveServerURLRegexp" requires explicit package name`
+
+Download the matching upstream modules:
+
 ```bash
-\$ ln -s /opt/texlive2021-installer/texmf-dist/scripts/latexmk/latexmk.pl /usr/bin/latexmk 
+BASE="https://tug.ctan.org/systems/texlive/tlnet/tlpkg/TeXLive"
+
+for mod in TLConfig TLUtils TLCrypto TLPDB TLPOBJ TLPSRC \
+           TLPaper TLConfFile TLDownload TLWinGoo TLTREE \
+           TeXCatalogue; do
+  curl -sL "$BASE/$mod.pm" -o ~/tlpkg/TeXLive/$mod.pm
+done
+
+curl -sL "$BASE/trans.pl" -o ~/tlpkg/TeXLive/trans.pl
 ```
-  - alias use script to create `tlmgr`
-  ```
-  alias tlmgr="/opt/texlive2021-installer/texmf-dist/scripts/texlive/tlmgr.pl --usermode"
-  ````
+
+### 3. Fix broken directory layout (Void-specific)
+
+Void places `tlpkg/` under `/usr/share/` instead of the standard `/usr/share/texmf-dist/`. Create the symlinks and directories tlmgr expects:
+
+`tlmgr` resolves `../../tlpkg` relative to the script location backup directory required by tlmgr:
+`config.guess` is required for architecture detection
+
+```bash
+sudo ln -s /usr/share/tlpkg /usr/share/texmf-dist/tlpkg
+
+sudo mkdir -p /usr/share/tlpkg/installer
+sudo ln -s /usr/share/automake-1.16/config.guess /usr/share/tlpkg/installer/config.guess
+```
+
+### 4. Set up user-mode tlmgr (no root needed)
+to be able to make user insatall latex pkg we should to initialise the user tree at ~/texmf.
+then Point to the frozen 2025 repository (avoids version mismatch with xbps)
+
+
+```bash
+/usr/share/texmf-dist/scripts/texlive/tlmgr.pl init-usertree
+mkdir /home/mhamdi/.texmf/tlpkg/backups
+/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2025/tlnet-final/
+```
+
+### 5. Usage
+
+check if tlmgr is work and apt to update pkgs:
+```bash
+/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode update --all
+```
+
