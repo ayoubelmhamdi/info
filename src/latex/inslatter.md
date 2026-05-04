@@ -1,5 +1,3 @@
-
-
 ## TeX Live 2025 on Void Linux
 
 ### 1. Install via xbps
